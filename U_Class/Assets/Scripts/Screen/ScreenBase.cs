@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.UI;
 using NaughtyAttributes;
 
@@ -27,7 +28,7 @@ public enum ScreenType
         public float animationDuration = .3f;
 
 
-        // Start is called before the first frame update
+     
         void Start()
         {
             if (startHided)
@@ -62,7 +63,7 @@ public enum ScreenType
                 var obj = listofObjetcs[i];
 
                 obj.gameObject.SetActive(true);
-                //obj.DOScale(0, animationDuration).From().SetDelay(i * delayBetweenObjects);
+                obj.DOScale(0, animationDuration).From().SetDelay(i * delayBetweenObjects);
             }
 
             Invoke(nameof(StartType), delayBetweenObjects * listofObjetcs.Count);

@@ -16,13 +16,13 @@ namespace Screens
        
         private void Start()
         {
-            ShowByType(startScreen);
             HideAll();
+            ShowByType(startScreen);  
         }
 
         public void ShowByType(ScreenType type)
         {
-            if (_currentScreen != null) _currentScreen.Hide();
+            if (_currentScreen != null);
 
             var nextScreen = screenBase.Find(i => i.screenType == type);
 
